@@ -15,8 +15,14 @@ const ContactForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Process form data here (e.g., send to an API)
     console.log('Form submitted:', formData);
+    // Clear the form by resetting the state
+    setFormData({
+      name: '',
+      email: '',
+      title: '',
+      description: '',
+    });
     alert('Form submitted!');
   };
 
@@ -24,19 +30,42 @@ const ContactForm: React.FC = () => {
     <form onSubmit={handleSubmit}>
       <div>
         <label>Name:</label><br />
-        <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+        <input 
+          type="text" 
+          name="name" 
+          value={formData.name} 
+          onChange={handleChange} 
+          required 
+        />
       </div>
       <div>
         <label>Email:</label><br />
-        <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+        <input 
+          type="email" 
+          name="email" 
+          value={formData.email} 
+          onChange={handleChange} 
+          required 
+        />
       </div>
       <div>
         <label>Title:</label><br />
-        <input type="text" name="title" value={formData.title} onChange={handleChange} required />
+        <input 
+          type="text" 
+          name="title" 
+          value={formData.title} 
+          onChange={handleChange} 
+          required 
+        />
       </div>
       <div>
         <label>Description:</label><br />
-        <textarea name="description" value={formData.description} onChange={handleChange} required />
+        <textarea 
+          name="description" 
+          value={formData.description} 
+          onChange={handleChange} 
+          required 
+        />
       </div>
       <button type="submit">Submit</button>
     </form>
