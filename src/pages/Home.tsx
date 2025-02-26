@@ -1,10 +1,6 @@
 // src/pages/Home.tsx
-import React, { useEffect, useState } from 'react';
-
-interface Cat {
-  id: string;
-  url: string;
-}
+import { useEffect, useState } from 'react';
+import { Cat } from '../types';
 
 const Home: React.FC = () => {
   const [cat, setCat] = useState<Cat | null>(null);

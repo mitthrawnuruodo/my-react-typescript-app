@@ -1,5 +1,4 @@
 // src/components/Header.tsx
-import React from 'react';
 import { NavLink } from 'react-router';
 import './Header.css'; // Create a CSS file for header styling
 

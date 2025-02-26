@@ -1,11 +1,7 @@
 // src/pages/CatDetail.tsx
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router';
-
-interface Cat {
-  id: string;
-  url: string;
-}
+import { Cat } from '../types';
 
 const CatDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();

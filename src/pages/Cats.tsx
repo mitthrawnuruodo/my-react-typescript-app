@@ -1,11 +1,7 @@
 // src/pages/Cats.tsx
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
-
-interface Cat {
-  id: string;
-  url: string;
-}
+import { Cat } from '../types';
 
 const Cats: React.FC = () => {
   const [cats, setCats] = useState<Cat[]>([]);

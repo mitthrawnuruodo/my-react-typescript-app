@@ -5,10 +5,12 @@
 ```
 src/
  ├─ main.tsx
+ ├─ types.ts
  ├─ App.tsx
  ├─ components/
  │    ├─ Layout.tsx
  │    ├─ Header.tsx
+ │    ├─ Header.css
  │    ├─ Footer.tsx
  │    └─ ContactForm.tsx
  └─ pages/
