@@ -1,6 +1,6 @@
 # React + Typescript + Cats
 
-## Project structure
+## Project structure (for the src/ folder)
 
 ```
 src/

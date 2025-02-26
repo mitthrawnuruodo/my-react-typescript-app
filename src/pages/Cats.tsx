@@ -22,8 +22,12 @@ const Cats: React.FC = () => {
 
   return (
     <div>
-      <h1>Cats</h1>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(150px,1fr))', gap: '1rem' }}>
+      <h1>12 random Cats</h1>
+      <div style={{ 
+        display: 'grid', 
+        gridTemplateColumns: 'repeat(auto-fill,minmax(150px,1fr))', 
+        gap: '1rem' 
+      }}>
         {cats.map(cat => (
           <div key={cat.id}>
             <Link to={`/cats/${cat.id}`}>

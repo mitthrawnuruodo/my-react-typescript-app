@@ -5,17 +5,17 @@ import { Cat } from '../types';
 const Home: React.FC = () => {
   const [cat, setCat] = useState<Cat | null>(null);
 
-  useEffect(() => {
-    const fetchRandomCat = async () => {
-      try {
-        const res = await fetch('https://api.thecatapi.com/v1/images/search');
-        const data: Cat[] = await res.json();
-        setCat(data[0]);
-      } catch (error) {
-        console.error('Error fetching cat:', error);
-      }
-    };
+  const fetchRandomCat = async () => {
+    try {
+      const res = await fetch('https://api.thecatapi.com/v1/images/search');
+      const data: Cat[] = await res.json();
+      setCat(data[0]);
+    } catch (error) {
+      console.error('Error fetching cat:', error);
+    }
+  };
 
+  useEffect(() => {
     fetchRandomCat();
   }, []);
 

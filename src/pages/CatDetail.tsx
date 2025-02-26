@@ -7,20 +7,20 @@ const CatDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [cat, setCat] = useState<Cat | null>(null);
 
-  useEffect(() => {
-    const fetchCatDetail = async () => {
-      try {
-        // The Cat API does not have a dedicated detail endpoint so we use the search with id filter
-        const res = await fetch(`https://api.thecatapi.com/v1/images/${id}`);
-        const data: Cat = await res.json();
-        setCat(data);
-      } catch (error) {
-        console.error('Error fetching cat detail:', error);
-      }
-    };
+  const fetchCatDetail = async (id: string) => {
+    try {
+      // The Cat API does not have a dedicated detail endpoint so we use the search with id filter
+      const res = await fetch(`https://api.thecatapi.com/v1/images/${id}`);
+      const data: Cat = await res.json();
+      setCat(data);
+    } catch (error) {
+      console.error('Error fetching cat detail:', error);
+    }
+  };
 
+  useEffect(() => {
     if (id) {
-      fetchCatDetail();
+      fetchCatDetail(id);
     }
   }, [id]);
 
